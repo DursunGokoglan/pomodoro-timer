@@ -1,6 +1,6 @@
 from tkinter import *
 import math
-# ---------------------------- CONSTANTS ------------------------------- #
+
 CHECKMARK = "✔"
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -17,7 +17,6 @@ long_break_sec = LONG_BREAK_MIN * 60
 reps = 0
 timer = ""
 remaining_count = 0
-# ---------------------------- TIMER RESET ------------------------------- # 
 
 
 def reset_timer():
@@ -31,9 +30,6 @@ def reset_timer():
     continue_button.grid_forget()
     start_button.grid(column=0, row=2)
     checkmark_label.config(text=CHECKMARK * (reps // 2), font=(FONT_NAME, 10, "bold"), bg=YELLOW, highlightthickness=0, fg=GREEN)
-
-
-# ---------------------------- TIMER MECHANISM ------------------------------- # 
 
 
 def start_timer(*args):
@@ -71,9 +67,6 @@ def continue_timer():
     stop_button.grid(column=0, row=2)
 
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
-
-
 def count_down(count):
     global remaining_count
     remaining_count = count
@@ -93,7 +86,6 @@ def count_down(count):
         window.after(1000, start_timer)
 
 
-# ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
